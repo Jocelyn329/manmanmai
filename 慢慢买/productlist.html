@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Title</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/productlist.css">
+</head>
+<body>
+
+<!--页面头部-->
+<header id="header">
+  <div class=index-header>
+    <div class="download"><a href="#"><img src="images/header_app.png" alt=""></a></div>
+    <h1 class="logo">慢慢买<a href="index.html"><img src="images/header_logo.png" alt=""></a></h1>
+  </div>
+  <!--搜索栏-->
+  <div class="index-search">
+    <input type="text" placeholder="请输入你想比价的商品">
+    <input type="button" value="搜索">
+  </div>
+</header>
+
+<!--面包屑导航-->
+<nav id="product-nav" class="bread-nav">
+  <ul>
+    <li><a href="index.html">首页 &gt;</a></li>
+    <li><a href="category.html">全部分类 &gt;</a></li>
+    <li class="nav-value"></li>
+  </ul>
+  <input type="button" value="筛选">
+</nav>
+
+<!--商品信息-->
+<section>
+  <ul id="productlist-infor">
+    <!--<li class="productlist-infor">-->
+    <!--<a href="">-->
+    <!--<img class="productlist-pic" src="images/ic_coudanpin.png" alt="">-->
+    <!--<div class="productlist-details">-->
+    <!--<p class="name">dushdiasidhaisdasdasdasdasdasd</p>-->
+    <!--<p class="price">dajsajkja</p>-->
+    <!--<p class="comment"><span>sd</span><span>sd</span></p>-->
+    <!--</div>-->
+    <!--</a></li>-->
+  </ul>
+</section>
+
+<!--活动页-->
+<section id="productlist-page">
+  <input type="button" data-index="prev" value="上一页">
+  <select name="pageid" id="page">
+    <!--<option value="1">asd</option>-->
+  </select>
+  <input type="button" data-index="next" value="下一页">
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+<!--productlist产品信息-->
+<script type="text/x-handlebars-template" id="productlistTpl">
+  {{each result }}
+  <li class="productlist-infor">
+    <a href="bijia.html?productid={{$value.productId}}&comment={{$value.productCom}}&">
+      <div class="productlist-pic">
+        {{#$value.productImg}}
+      </div>
+      <div class="productlist-details">
+        <p class="name">{{$value.productName}}</p>
+        <p class="price">{{$value.productPrice}}</p>
+        <p class="comment"><span>{{$value.productQuote}} </span><span> {{$value.productCom}}</span></p>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</script>
+
+<script type="text/x-handlebars-template" id="pageTpl">
+  {{each pageArr}}
+  <option value="{{$value.pageId}}">{{$value.pageId}} / {{$value.pageCount}}</option>
+  {{/each}}
+</script>
+
+
+<!--引入js文件-->
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/productlist.js"></script>
+</body>
+</html>

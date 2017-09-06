@@ -1,0 +1,60 @@
+@import url(common.less);
+
+#category-sort {
+  margin-bottom: 20rem/@r;
+  .sort {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    >li:last-child {
+      border-bottom: none;
+    }
+    >li {
+      >.sort-title {
+        border-bottom: 1px solid #ccc;
+        background-color: #ededed;
+        padding: 0 15rem/@r;
+        font-weight: 700;
+        font-size: 16rem/@r;
+        line-height: 40rem/@r;
+        color: #333;
+        display: block;
+        position: relative;
+
+        &:after {
+          content: "";
+          .center-y();
+          right: 15rem/@r;
+          height: 10rem/@r;
+          width: 18rem/@r;
+          background: url(../images/arrow.gif) no-repeat top left;
+        }
+      }
+      /*隐藏的ul*/
+      >.sort-content {
+        .clearfix();
+        >li {
+          .w33();
+          .fl();
+          .one_txt_cut();
+          text-align: center;
+          font-size: 16rem/@r;
+          line-height: 40rem/@r;
+          box-sizing: border-box;
+          border-right: 1px solid #ccc;
+          border-bottom: 1px solid #ccc;
+          a{
+            color: #333;
+          }
+        }
+        //注意最后一列不加边框
+        >li:nth-child(3n){
+          border-right: none;
+        }
+      }
+      .sort-content.hidden {
+        .dn();
+      }
+    }
+
+  }
+}

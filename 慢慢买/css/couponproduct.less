@@ -1,0 +1,93 @@
+@import url(common.less);
+/*优惠券列表*/
+#couponproduct {
+  > .title {
+    text-align: center;
+    line-height: 32rem/@r;
+  }
+  > #list-content {
+    background-color: #fff;
+    li {
+      border-bottom: 1px solid #ccc;
+      a {
+        /*注意转为块级元素后设置padding才有效*/
+        display: block;
+        padding: 10rem/@r 10rem/@r;
+        .clearfix();
+        .list-pic {
+          .fl();
+          width: 80rem/@r;
+          padding-right: 10rem/@r;
+        }
+        .list-infor {
+          margin-left: 100rem/@r;
+          .name {
+            color: #333;
+            padding-right: 10rem/@r;
+            line-height: 20rem/@r;
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              right: -5rem/@r;
+              height: 20px;
+              width: 20px;
+              background: url(../images/arrow-right.svg) no-repeat center;
+              .bgz();
+            }
+          }
+          .price {
+            color: #333;
+            line-height: 24rem/@r;
+          }
+          .time {
+            line-height: 24rem/@r;
+            color: @color;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+/*模态层*/
+#modal {
+  .dn();
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /*此时高度为页面高度*/
+  height: 100%; /*由于内容动态生成  此时的高度为body的高度*/
+  background-color: rgba(0, 0, 0, .7);
+  .pic{
+    .center();
+    width: 60%;
+  }
+  i {
+    content: "";
+    position: absolute;
+    height: 40rem/@r;
+    width: 15%;
+    background: url("../images/arrow-right.svg") center;
+    .bgz();
+    top: 50%;
+  }
+  i.left{
+    //transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
+    -webkit-transform:translateY(-50%) rotate(180deg);
+    left: 0;
+  }
+  i.right{
+    right: 0;
+    transform: translateY(-50%);
+    -webkit-transform:translateY(-50%);
+  }
+}
+
+/*模态层显示的时候body不允许滚动*/
+body.ovf-hidden {
+  overflow: hidden;
+}

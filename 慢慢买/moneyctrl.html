@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>省钱控</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/moneyctrl.css">
+</head>
+<body>
+
+<!--页面头部-->
+<header id="header">
+  <div class=index-header>
+    <h1>省钱控-最新优惠</h1>
+    <a href="index.html" class="icback"></a>
+    <div class="download"><a href=""><img src="images/header_app.png" alt=""></a></div>
+  </div>
+</header>
+
+<!--省钱控产品信息-->
+<section>
+  <ul id="moneyctrl">
+    <!--省钱控产品信息模板-->
+    <!--<li>-->
+      <!--<a href="#">-->
+        <!--<div class=intro-product>-->
+          <!--&lt;!&ndash;左边图片&ndash;&gt;-->
+          <!--<div class="intro-pic">-->
+            <!--<img src="images/ic_temai.png" alt="">-->
+          <!--</div>-->
+          <!--&lt;!&ndash;右边信息&ndash;&gt;-->
+          <!--<div class="intro-details">-->
+            <!--<p class="details-t">{{$value.productName}} <span>{{$value.productPinkage}}</span></p>-->
+            <!--<div class="details-b">-->
+              <!--<span>{{$value.productFrom}} | {{$value.productTime}}</span>-->
+              <!--&lt;!&ndash;<i>{{$value.productComCount.replace(/[\u4e00-\u9fa5]/g, "")}}</i>&ndash;&gt;-->
+              <!--<i>sssasad</i>-->
+            <!--</div>-->
+          <!--</div>-->
+
+        <!--</div>-->
+      <!--</a>-->
+    <!--</li>-->
+  </ul>
+</section>
+
+<!--活动页-->
+<section id="productlist-page">
+  <input type="button" data-index="prev" value="上一页">
+  <select name="pageid" id="page">
+    <!--页码生成模板-->
+
+  </select>
+  <input type="button" data-index="next" value="下一页">
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+
+<!--省钱控产品信息模板-->
+<script type="text/x-handlebars-template" id="moneyctrlTpl">
+  {{each result}}
+  <li>
+    <a href="moneyproduct.html?productid={{$value.productId}}">
+      <div class=intro-product>
+        <!--左边图片-->
+        <div class="intro-pic">
+          {{#$value.productImgSm}}
+        </div>
+        <!--右边信息-->
+        <div class="intro-details">
+          <p class="details-t">{{$value.productName}} <span>{{$value.productPinkage}}</span></p>
+          <div class="details-b">
+            <span>{{$value.productFrom}} | {{$value.productTime}}</span>
+            <!--<i>{{$value.productComCount.replace(/[\u4e00-\u9fa5]/g, "")}}</i>-->
+            <i>{{$value.productComCount.replace(/[\u4e00-\u9fa5]/g, "")}}</i>
+          </div>
+        </div>
+
+      </div>
+    </a>
+  </li>
+  {{/each}}
+
+</script>
+
+<!--页码生成模板-->
+<script type="text/x-handlebars-template" id="pageTpl">
+  {{each pageArr}}
+  <option value="{{$value.pageId}}">{{$value.pageId+1}} / {{$value.pageCount}}</option>
+  {{/each}}
+</script>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/moneyctrl.js"></script>
+</body>
+</html>

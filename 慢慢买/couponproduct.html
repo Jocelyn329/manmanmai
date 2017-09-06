@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>优惠券列表</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/couponproduct.css">
+</head>
+<body>
+
+
+<!--页面头部-->
+<header id="header">
+  <div class="index-header header-red">
+    <h1>优惠券</h1>
+    <a href="coupon.html" class="icback"></a>
+    <div class="download"><a href=""><img src="images/header_app.png" alt=""></a></div>
+  </div>
+</header>
+
+<!--创建优惠券列表-->
+<section id="couponproduct">
+  <p class="title">--点餐前出示手中的优惠券，即可享受优惠--</p>
+
+  <!--产品列表信息-->
+  <ul id="list-content">
+    <!--产品列表模板-->
+    <script type="text/x-handlebars-template" id="listsTpl">
+      {{each result}}
+      <li class="list-product"><a href="javascript:;">
+        <div class="list-pic" data-productId="{{$value.couponProductId}}">
+          {{#$value.couponProductImg}}
+        </div>
+        <div class="list-infor">
+          <p class="name">{{$value.couponProductName}}</p>
+          <p class="price"><b>{{$value.couponProductPrice}}</b></p>
+          <p class="time">{{$value.couponProductTime}}</p>
+        </div>
+      </a></li>
+      {{/each}}
+    </script>
+  </ul>
+</section>
+
+<!--模态层-->
+<section id="modal">
+  <i class="left"></i>
+  <i class="right"></i>
+  <div class="pic">
+    <!--<img class="prev" src="images/ic_cu.png" alt="">-->
+    <img class="current" src="" alt="">
+    <!--<img class="next" src="images/ic_cu.png" alt="">-->
+  </div>
+
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/couponproduct.js"></script>
+</body>
+</html>

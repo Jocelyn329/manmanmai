@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>品牌大全</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/brandTitle.css">
+</head>
+<body>
+
+<!--页面头部-->
+<header id="header">
+  <div class=index-header>
+    <div class="download"><a href="#"><img src="images/header_app.png" alt=""></a></div>
+    <h1 class="logo">慢慢买<a href="index.html"><img src="images/header_logo.png" alt=""></a></h1>
+  </div>
+  <!--搜索栏-->
+  <div class="index-search">
+    <input type="text" placeholder="请输入你想比价的商品">
+    <input type="button" value="搜索">
+  </div>
+</header>
+
+<!--面包屑导航-->
+<nav id="brand-nav" class="bread-nav">
+  <ul>
+    <li><a href="index.html">首页 &gt;</a></li>
+    <li><a href="brandTitle.html">品牌大全</a></li>
+    <li></li>
+  </ul>
+  <input type="button" value="筛选">
+</nav>
+
+
+<!--品牌大全标题-->
+<section id="brand">
+  <h3>热门品牌排行</h3>
+
+  <ul id="brand-all">
+    <!--创建品牌标题大全-->
+    <script type="text/x-handlebars-template" id="brandTitleTpl">
+      {{each result}}
+      <li><a href="brand.html?title={{$value.brandTitle}}&categoryId={{$value.categoryId}}&brandTitleId={{$value.brandTitleId}}" class="brand-title">{{$value.brandTitle}}</a></li>
+      {{/each}}
+    </script>
+  </ul>
+
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/brandTitle.js"></script>
+</body>
+</html>

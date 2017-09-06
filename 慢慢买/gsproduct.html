@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>凑单品</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/gsproduct.css">
+</head>
+<body>
+
+<!--页面头部-->
+<header id="header">
+  <div class="index-header">
+    <h1>凑单品</h1>
+    <a href="index.html" class="icback"></a>
+    <div class="download"><a href=""><img src="images/header_app.png" alt=""></a></div>
+  </div>
+</header>
+
+<!--单品信息-->
+<section id="gsproduct">
+  <div class="gs-head">
+    <!--选择栏-->
+    <ul id="choose">
+      <!--a标签内容根据后台数据设置-->
+      <li class="shopli" data-index="0"><a href="javascript:;" class="shopName"></a><i></i></li>
+      <li class="areali" data-index="1"><a href="javascript:;" class="areaName"></a><i></i></li>
+      <li class="priceli" data-index="2"><a href="javascript:;" class="priceName">全部价格</a><i></i></li>
+    </ul>
+    <span class="search"></span>
+    <!--下拉列表-->
+    <div id="downlist">
+      <!--shop下拉列表-->
+      <ul id="shop" class="hidden">
+        <script type="text/x-handlebars-template" id="gsShopTpl">
+          {{each result}}
+          <li data-shopid="{{$value.shopId}}">{{$value.shopName}}</li>
+          {{/each}}
+        </script>
+      </ul>
+
+      <!--area下拉列表-->
+      <ul id="area" class="hidden">
+        <script type="text/x-handlebars-template" id="gsAreaTpl">
+          {{each result}}
+          <li data-areaid="{{$value.areaId}}">{{$value.areaName}}</li>
+          {{/each}}
+        </script>
+      </ul>
+
+      <!--价格下拉列表-->
+      <ul id="price" class="hidden">
+        <li class="active">0-100</li>
+        <li>100-200</li>
+        <li>200-300</li>
+        <li>300-400</li>
+      </ul>
+    </div>
+  </div>
+
+  <!--产品数据-->
+  <div class="gs-body">
+    <ul id="product">
+
+      <script type="text/x-handlebars-template" id="gsProductTpl">
+        {{each result}}
+        <li class="pro-li"><a href="https://item.m.jd.com/ware/view.action?wareId=1274360">
+          <img src="{{$value.productImg}}" alt="">
+          <p class="pro-name">{{$value.productName}}</p>
+          <p class="pro-price">
+            <span>{{$value.productPrice}}</span>
+            <i>去凑单</i>
+          </p>
+        </a></li>
+        {{/each}}
+      </script>
+
+    </ul>
+  </div>
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/gsproduct.js"></script>
+</body>
+</html>

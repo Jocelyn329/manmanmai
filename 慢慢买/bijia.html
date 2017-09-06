@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>比价</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/bijia.css">
+</head>
+<body>
+<!--页面头部-->
+<header id="header">
+  <div class=index-header>
+    <div class="download"><a href="#"><img src="images/header_app.png" alt=""></a></div>
+    <h1 class="logo">慢慢买<a href="index.html"><img src="images/header_logo.png" alt=""></a></h1>
+  </div>
+  <!--搜索栏-->
+  <div class="index-search">
+    <input type="text" placeholder="请输入你想比价的商品">
+    <input type="button" value="搜索">
+  </div>
+</header>
+
+
+<!--面包屑导航-->
+<nav id="bijia-nav" class="bread-nav">
+  <ul>
+    <li><a href="index.html">首页 &gt;</a></li>
+    <li><a href="" class="bijia-category"></a></li>
+    <li class="bijia-value"></li>
+  </ul>
+  <input type="button" value="筛选">
+</nav>
+
+<!--动态生成比价上半部分模板-->
+<section id="bijia-product">
+
+</section>
+
+<!--网友评价-->
+<section id="bijia-comment">
+  <p class="comment-title">网友评价</p>
+  <div id="comment-content">
+    <!--<div class="comment-row">-->
+    <!--<div class="from">-->
+    <!--<p class="top"><span class="comName">dsds</span><span class="comTime">hhhhh</span></p>-->
+    <!--<p><span class="comFrom">sadasd</span></p>-->
+    <!--</div>-->
+    <!--<p class="comContent">asdasd</p>-->
+    <!--</div>-->
+  </div>
+  <div id="comment-more">
+    <a href="javascript:;">查看更多评价</a>
+  </div>
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+
+<!--比价上半部分模板-->
+<script type="text/x-handlebars-template" id="bijiaTpl">
+  {{each result}}
+  <div class="bijia-infor">
+    <p>{{$value.productName}}</p>
+    {{#$value.productImg}}
+  </div>
+  <div class="bijia-ctrl">
+    <a href="">比价购买</a><a href="">产品参数</a><a href="" class="bijia-comment">dfsd</a>
+  </div>
+  {{#$value.bjShop}}
+  <p class="bijia-note">
+    * 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。
+  </p>
+  {{/each}}
+</script>
+
+<!--比价下半部分模板-->
+<script type="text/x-handlebars-template" id="bijiaCommentTpl">
+  {{each result}}
+  <div class="comment-row">
+    <div class="from">
+      <p class="top"><span class="comName">{{$value.comName}}</span><span class="comTime">{{$value.comTime}}</span></p>
+      <p><span class="comFrom">{{$value.comFrom}}</span></p>
+    </div>
+    <p class="comContent">{{$value.comContent}}</p>
+  </div>
+  {{/each}}
+</script>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/bijia.js"></script>
+</body>
+</html>

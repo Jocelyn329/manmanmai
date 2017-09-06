@@ -1,0 +1,110 @@
+@import url(common.less);
+
+//首页公共标题样式
+.index-title {
+  .clearfix();
+  margin-top: 10rem/@r;
+  background-color: @color;
+  padding: 0 10px;
+  h3 {
+    line-height: 30rem/@r;
+    font-size: 14rem/@r;
+    font-weight: 400;
+    color: #fff;
+    .fl();
+  }
+  img {
+    width: 18rem/@r;
+    margin-top: 6rem/@r;
+    .fr();
+  }
+}
+
+//导航菜单栏
+.index-menu {
+  margin-top: 8rem/@r;
+  background-color: #fff;
+  ul {
+    .clearfix();
+    li {
+      margin-top: 15rem/@r;
+      .fl();
+      width: 25%;
+      a {
+        text-align: center;
+        img {
+          width: 100%;
+          padding: 0 15rem/@r;
+          .bz();
+        }
+        p {
+          color: #333;
+          padding: 0 10rem/@r;
+          .one_txt_cut();
+        }
+      }
+    }
+
+    li.hidden {
+      display: none;
+    }
+  }
+}
+
+//折扣推荐
+.index-intro {
+  margin-bottom: 20rem/@r;
+  .intro-product {
+    .clearfix();
+    padding: 15rem/@r 10rem/@r;
+    background-color: #fff;
+    margin-bottom: 2px;
+
+    .intro-pic {
+      .fl();
+      img {
+        .fl();
+        width: 80rem/@r;
+        margin-right: 10rem/@r;
+      }
+    }
+    .intro-details {
+      margin-left: 100rem/@r;
+      position: relative;
+      height: 80rem/@r;
+
+      p.details-t {
+        color: #333;
+        span {
+          color: @color;
+        }
+      }
+      .details-b {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        i {
+          &before {
+
+          }
+          .fr();
+        }
+      }
+    }
+  }
+
+  > .intro-more {
+    height: 25rem/@r;
+    padding: 10rem/@r 10rem/@r 0;
+    text-align: center;
+    background-color: #fff;
+    a {
+      display: block;
+      height: 100%;
+      line-height: 25rem/@r;
+      border: 1px solid #f1f1f1;
+      background-image: linear-gradient(to bottom, #fff, #F4F4F4);
+      color: #333;
+    }
+  }
+}

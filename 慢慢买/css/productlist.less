@@ -1,0 +1,49 @@
+@import url(common.less);
+
+//产品详细信息
+#productlist-infor {
+  li.productlist-infor {
+
+    > a {
+
+      .clearfix();
+      display: block;
+      font-size: 12rem/@r;
+      padding: 10rem/@r;
+      height: 80rem/@r;
+      border-bottom: 1px solid #ccc;
+      background-color: #fff;
+      position: relative;
+      > .productlist-pic {
+        .fl();
+        width: 80rem/@r;
+      }
+      > .productlist-details {
+        margin-left: 90rem/@r;
+        > .name {
+          color: #333;
+          /*注意多行溢出  以及*/
+          word-break: break-all;
+          .txt_cut(@num:3);
+        }
+        > .price {
+          color: #f00;
+          position: absolute;
+          bottom: 24rem/@r;
+        }
+        > .comment {
+          font-size: 10rem/@r;
+          position: absolute;
+          bottom: 10rem/@r;
+          > span {
+            margin-right: 10rem/@r;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+

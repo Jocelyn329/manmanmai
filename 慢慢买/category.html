@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>分类页面</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+
+<!--页面头部-->
+<header id="header">
+  <div class=index-header>
+    <div class="download"><a href="#"><img src="images/header_app.png" alt=""></a></div>
+    <h1 class="logo">慢慢买<a href="index.html"><img src="images/header_logo.png" alt=""></a></h1>
+  </div>
+  <!--搜索栏-->
+  <div class="index-search">
+    <input type="text" placeholder="请输入你想比价的商品">
+    <input type="button" value="搜索">
+  </div>
+</header>
+
+<!--页面信息-->
+<section id="category-sort">
+  <ul class="sort">
+    <!--标题-->
+    <script type="text/x-handlebars-template" id="categoryTitleTpl">
+      {{each result}}
+      <li>
+        <a href="javascript:;" class="sort-title" data-titleid="{{$value.titleId}}">{{$value.title}}</a>
+        <ul class="sort-content hidden">
+          <!--<li><a href="#">sxz</a></li>-->
+        </ul>
+      </li>
+      {{/each}}
+    </script>
+  </ul>
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+<!--内容-->
+<script type="text/x-handlebars-template" id="categoryContentTpl">
+  {{each result}}
+  <li><a href="productlist.html?categoryid={{$value.categoryId}}&category={{$value.category}}"
+         data-value="{{$value.category}}">{{$value.category}}</a></li>
+  {{/each}}
+</script>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>

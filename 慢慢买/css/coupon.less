@@ -1,0 +1,37 @@
+@import url(common.less);
+
+#onsale {
+  margin-bottom: 20rem/@r;
+  padding: 10rem/@r  6rem/@r 24rem/@r;
+  background-color: #fff;
+  #onsale-content {
+    .clearfix();
+    li {
+      .fl();
+      .bz();
+      //固定高度
+      height: 72rem/@r;
+      width: 32%;
+      border: 1px solid #ccc;
+      margin-bottom: 5rem/@r;
+      a {
+        display: block;
+        padding: 5rem/@r;
+        text-align: center;
+        img{
+          width: 50%;
+          margin: 0 auto;
+        }
+        p {
+          //单行溢出
+          color: #333;
+          .one_txt_cut();
+        }
+      }
+
+    }
+    li:nth-child(3n+2) {
+      margin: 0 2%;
+    }
+  }
+}

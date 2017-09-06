@@ -1,0 +1,143 @@
+@import url(common.less);
+//国内折扣产品信息
+.discount-product {
+  background-color: #fff;
+  padding: 0 10rem/@r;
+  margin-bottom: 20rem/@r;
+  > h3 {
+    //text-align: center;
+    font-size: 16rem/@r;
+    padding: 14rem/@r 0;
+  }
+  //来源 等小字
+  > .dis-from {
+    color: #999;
+    font-size: 10rem/@r;
+  }
+  > .dis-infor {
+    margin-top: 15rem/@r;
+    line-height: 20rem/@r;
+    //小图
+    .dis-small {
+      .fr();
+      width: 100rem/@r;
+      padding: 10rem/@r 0 10rem/@r 10rem/@r;
+    }
+    .dis-big {
+      padding: 10rem/@r 0;
+    }
+  }
+
+  //是否有货
+  > .dis-has {
+    padding: 0 100rem/@r;
+    #disstorck {
+      box-shadow: 0 0 8rem/@r #ccc;
+      li {
+        border-bottom: 1px dotted #ccc;
+        padding: 0 10rem/@r;
+        a {
+          color: #333;
+          strong {
+            .fr();
+            color: @color;
+          }
+        }
+      }
+    }
+  }
+
+  //前往购买
+  > .dis-buy {
+    p {
+      padding: 18rem/@r 10rem/@r;
+      a {
+        display: block;
+        text-align: center;
+        line-height: 25rem/@r;
+        color: #fff;
+        background-color: @color;
+        border-radius: 5px;
+      }
+    }
+    img {
+      padding: 20rem/@r 0;
+    }
+  }
+
+  //评论
+  > .dis-comment {
+    .tit {
+      font-size: 14rem/@r;
+      color: #333;
+
+    }
+    .reply {
+      padding: 14rem/@r 0;
+      .form {
+        border-radius: 5rem/@r;
+        border: 1px solid #ccc;
+        #ctl00_ContentBody_txt_nr {
+          width: 100%;
+          height: 62rem/@r;
+          resize: none;
+          border: none;
+        }
+        .ctrl {
+          margin-top: -2rem/@r;
+          background-color: #eee;
+          border-top: 1px solid #ccc;
+          .clearfix();
+          > input {
+            .fr();
+            line-height: 32rem/@r;
+            width: 85rem/@r;
+            color: #F7F7F7;
+            background-color: @color;
+          }
+        }
+
+      }
+    }
+
+    .list {
+
+      .ui-border-b {
+        padding: 5rem/@r 0;
+        position: relative;
+      }
+      .userimg {
+        position: absolute;
+        width: 35rem/@r;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+      .con {
+        margin-left: 45rem/@r;
+        .name {
+          .clearfix();
+          .username {
+            .fl();
+            color: #5997c0;
+          }
+          .time {
+            .fr();
+            color: #999;
+          }
+        }
+        .content{
+          margin-top: 5rem/@r;
+          line-height: 16rem/@r;
+          img{
+            width: 22rem/@r;
+          }
+        }
+
+      }
+    }
+
+  }
+
+}

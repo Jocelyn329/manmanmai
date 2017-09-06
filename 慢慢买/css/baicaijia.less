@@ -1,0 +1,174 @@
+@import url(common.less);
+
+/*标题*/
+#bcj-title {
+  position: relative;
+  #wrapper {
+    width: 90%;
+    overflow: hidden;
+    height: 35rem/@r;
+    ul {
+      //.clearfix();
+      height: 35rem/@r;
+      //min-width: 320rem/@r;
+      background-color: #fff;
+      /*注意消除间隙*/
+      font-size: 0;
+      transition: transform 0.5s;
+      li {
+        .fl();
+        font-size: 12rem/@r;
+        a {
+          font-size: 14rem/@r;
+          display: inline-block;
+          color: #333;
+          margin: 5rem/@r 15rem/@r;
+        }
+      }
+      li.active {
+        a {
+          position: relative;
+          color: red;
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: -6rem/@r;
+            left: 0;
+            width: 100%;
+            border-bottom: 2px solid red;
+          }
+        }
+      }
+    }
+  }
+  > span {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    background: #e7e7e7;
+    border-left: 1px solid #ccc;
+    background: url(../images/search.svg) no-repeat center;
+  }
+}
+
+/*内容*/
+#bcj-content {
+  margin-bottom: 20rem/@r;
+  #baicaijia-product {
+    li {
+      margin-top: 8rem/@r;
+      display: block;
+      padding: 8rem/@r 5rem/@r;
+      background-color: #fff;
+      .clearfix();
+      position: relative;
+      > a {
+        text-indent: -999em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+      .left {
+        .fl();
+        width: 105rem/@r;
+        height: 105rem/@r;
+      }
+      .right {
+        margin-left: 120rem/@r;
+        > .name {
+          color: #333;
+          line-height: 20rem/@r;
+        }
+        > .price {
+          font-size: 16rem/@r;
+          color: red;
+          em, i {
+            font-size: 13rem/@r;
+            margin-right: 5rem/@r;
+          }
+          del {
+            font-size: 12rem/@r;
+            color: #969696;
+            margin-left: 10rem/@r;
+          }
+        }
+        > .bar {
+          color: red;
+          margin: 5rem/@r 0 8rem/@r;
+          height: 16rem/@r;
+          line-height: 16rem/@r;
+          position: relative;
+          > .goquan {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 999;
+          }
+          b{
+            display: inline-block;
+            margin-left: 75rem/@r;
+            height: 16rem/@r;
+            line-height:16rem/@r;
+          }
+          i {
+            .bz();
+            color: #fff;
+            display: inline-block;
+            text-align: center;
+            width: 70rem/@r;
+            height: 14rem/@r;
+            line-height: 14rem/@r;
+            border: 1rem/@r solid #f00;
+            border-radius: 10rem/@r;
+            background-color: rgba(255, 0, 0, .4);
+            .center-y();
+            overflow: hidden;
+            em {
+              height: 14rem/@r;
+              left: -1rem/@r;
+              top: -1rem/@r;
+              position: absolute;
+              border-radius: 10rem/@r;
+              background-color: rgba(255, 0, 0, .6);
+            }
+            span {
+              /*为了将其放置最上面*/
+              position: relative;
+              font-size: 10rem/@r;
+              line-height: 12rem/@r;
+            }
+
+          }
+        }
+        > .coupon {
+          position: relative;
+          z-index: 999;
+          a {
+            display: inline-block;
+            height: 20rem/@r;
+          }
+          a:first-child {
+            color: #f00;
+            border: 1px dotted #f00;
+            padding: 0 5rem/@r;
+          }
+          a:last-child {
+            .fr();
+            margin-right: 5rem/@r;
+            padding: 0 5rem/@r;
+            border-radius: 5px;
+            color: #fff;
+            background-color: rgba(255, 0, 0, .5);
+            border: 1px solid #f00;
+          }
+        }
+      }
+    }
+
+  }
+}

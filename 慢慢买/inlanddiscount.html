@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>国内折扣</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/inlanddiscount.css">
+</head>
+<body>
+
+<!--页面头部-->
+<header id="header">
+  <div class=index-header>
+    <h1>国内折扣</h1>
+    <a href="index.html" class="icback"></a>
+    <div class="download"><a href=""><img src="images/header_app.png" alt=""></a></div>
+  </div>
+</header>
+
+
+<!--国内折扣商品列表-->
+<section>
+  <ul id="discount-list">
+    <!--<li><a href="">-->
+      <!--<img src="images/ic_bcj.png" alt="">-->
+      <!--<p class="name">HDOASIDJASP</p>-->
+      <!--<p class="price">HDOASIDJASP</p>-->
+      <!--<p class="infor"><span>sds</span><span>sdsd</span><span>sdsd</span></p>-->
+    <!--</a></li>-->
+  </ul>
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+
+<!--国内折扣商品模板-->
+<script type="text/x-handlebars-template" id="discountListTpl">
+  {{each result}}
+  <li><a href="discount.html?productid={{$value.productId}}">
+    {{#$value.productImg}}
+    <p class="name">{{$value.productName}}</p>
+    <p class="price">{{$value.productPrice}}</p>
+    <p class="infor">
+      <span>{{$value.productFrom}}</span>
+      <span>{{$value.productTime}}</span>
+    </p>
+  </a></li>
+  {{/each}}
+</script>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/inlanddiscount.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+@import url(common.less);
+
+#gsproduct {
+  margin-bottom: 20rem/@r;
+  //头部选择框
+  .gs-head {
+    background-color: #fff;
+    position: relative;
+
+    #choose {
+      .clearfix();
+      > li {
+        .fl();
+        .bz();
+        border-bottom: 1px solid #ccc;
+        height: 32rem/@r;
+        width: 30%;
+        text-align: center;
+        > a {
+          line-height: 32rem/@r;
+          color: #333;
+        }
+        > i {
+          .fr();
+          width: 24rem/@r;
+          height: 100%;
+          background: url(../images/choose-down.svg) no-repeat center;
+        }
+      }
+      > li.on {
+        > i {
+          background: url(../images/choose.svg) no-repeat center;
+        }
+      }
+    }
+    .search {
+      .bz();
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10%;
+      height: 32rem/@r;
+      background: url(../images/search.svg) no-repeat center;
+    }
+
+    #shop, #area, #price {
+      position: absolute;
+      background-color: #fff;
+      width: 100%;
+      li {
+        color: #333;
+        line-height: 32rem/@r;
+        text-indent: 10rem/@r;
+        border-bottom: 1px solid #ccc;
+      }
+      li.active{
+        color: red;
+        &:after {
+          content: "√";
+          position: absolute;
+          right: 15rem/@r;
+          color: red;
+        }
+      }
+    }
+    #shop.hidden, #area.hidden, #price.hidden {
+      .dn()
+    }
+  }
+
+  //产品数据
+  .gs-body {
+    > #product {
+      .clearfix();
+      padding: 4rem/@r;
+      > .pro-li {
+        /*注意高度设置*/
+        //height: 205rem/@r;
+        .fl();
+        .bz();
+        width: 50%;
+        padding: 4rem/@r;
+        > a {
+          display: block;
+          padding: 4rem/@r;
+          background-color: #fff;
+          /*注意图片设置 高度限定 宽度自适应 */
+          > img {
+            height: 135rem/@r;
+            width: auto;
+            margin: 0 auto;
+          }
+          > .pro-name {
+            /*注意多行溢出*/
+            .txt_cut(@num: 2);
+            height: 30rem/@r;
+            color: #333;
+            font-size: 10rem/@r;
+          }
+          > .pro-price {
+            .clearfix();
+            span {
+              color: red;
+            }
+            i {
+              .fr();
+              text-align: center;
+              width: 52rem/@r;
+              line-height: 24rem/@r;
+              background-color: @color;
+              color: #fff;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

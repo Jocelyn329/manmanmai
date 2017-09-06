@@ -1,0 +1,32 @@
+@import url(common.less);
+
+/*商城导航栏*/
+#sitenav {
+  #sitenav-list {
+    .clearfix();
+    padding: 8rem/@r 36rem/@r;
+    background-color: #fff;
+    > li {
+      .fl();
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      margin: 2rem/@r;
+      a {
+        .clearfix();
+        .bz();
+        display: block;
+        padding: 12rem/@r 6rem/@r;
+        /*注意 文字与图片*/
+        line-height: 16rem/@r;
+        color: #333;
+        img {
+          .fl();
+          height: 16rem/@r;
+          width: auto;
+          margin-right: 5rem/@r;
+        }
+
+      }
+    }
+  }
+}

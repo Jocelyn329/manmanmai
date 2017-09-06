@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>国内折扣商品</title>
+  <script src="js/rem.js"></script>
+  <link rel="stylesheet" href="css/discount.css">
+</head>
+
+<!--页面头部-->
+<header id="header">
+  <div class=index-header>
+    <h1>国内折扣</h1>
+    <a href="inlanddiscount.html" class="icback"></a>
+    <div class="download"><a href=""><img src="images/header_app.png" alt=""></a></div>
+  </div>
+</header>
+
+<!--国内折扣产品信息-->
+<section id="discount">
+  <!--国内折扣产品信息模板-->
+  <!--<div class="discount-product">-->
+  <!--<h3>移动端凑单品：海天 鲜味 生抽 1.28L</h3>-->
+  <!--<p>-->
+  <!--<span>京东商城</span>-->
+  <!--<span>10-25 14:10</span>-->
+  <!--<span>小编烟火 / 慢慢买</span>-->
+  <!--</p>-->
+  <!--<div>-->
+  <!--<img src="images/ic_mall.png" alt="">-->
+  <!--<p>海天的金标生抽酱油，采用了非转基因大豆以及小麦发酵而成，而自然鲜的口感是有些鲜甜鲜甜的感觉，非常适合用来作为日常炒菜用的调味料，当然也能用作白切系列的蘸酱调料，相信吃过美味鲜的慢友们都了解的。",-->
+  <!--"productInfo1": "目前京东商城移动端售价10.9元，不错的凑单品，刚需可入，规格1.28L。</p>-->
+  <!--</div>-->
+  <!--<div>-->
+  <!--<img src="images/ic_mall.png" alt="">-->
+
+  <!--</div>-->
+
+</section>
+
+<!--页面底部-->
+<footer id="footer">
+  <div class="foot-t">
+    <a href="#">登录</a>
+    <a href="#">注册</a>
+    <a href="#top"><img src="images/top.jpg" alt=""> 返回顶部</a>
+  </div>
+  <div class="foot-b">
+    <p>
+      <a href="#">手机APP下载</a>
+      <a href="#">慢慢买手机版</a>
+      ---掌上比价平台
+    </p>
+    <p class=link><a href="#">m.manmanbuy.com</a></p>
+  </div>
+</footer>
+
+<body>
+
+<script type="text/x-handlebars-template" id="discountProductTpl">
+  {{each result}}
+  <div class="discount-product">
+    <h3>{{$value.productName}}</h3>
+    <p class="dis-from">
+      <span>{{$value.productFrom}}</span>
+      <span>{{$value.productTime}}</span>
+      <span>{{$value.productTips}}</span>
+    </p>
+
+    <div class="dis-infor">
+      <!--小图-->
+      <p class="dis-small"><img src="images/flower.jpg" alt=""></p>
+      <p>{{$value.productInfo}}</p>
+      <!--大图-->
+      <p class="dis-big">{{#$value.productImg}}</p>
+    </div>
+
+    <div class="dis-buy">
+      <p><a href="">前往购买</a></p>
+      <img src="images/mmbweixin2.png" alt="">
+    </div>
+
+    <div class="dis-comment">
+      {{#$value.productComment}}
+    </div>
+
+  </div>
+  {{/each}}
+</script>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+<script src="js/lib/template.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/discount.js"></script>
+</body>
+</html>
